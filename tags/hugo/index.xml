@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>hugo on Grace&#39;s Office</title>
+    <link>https://Graceoooffice.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on Grace&#39;s Office</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Mar 2023 17:33:27 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【自学计划系列03】使用Hugo等配置增添网站功能</title>
+      <link>https://Graceoooffice.github.io/posts/self-study-plan-series/ss0313/</link>
+      <pubDate>Sun, 12 Mar 2023 17:33:27 +0800</pubDate>
+      
+      <guid>https://Graceoooffice.github.io/posts/self-study-plan-series/ss0313/</guid>
+      <description>创建repo在你的GitHub账户 我将repo命名为blog_comments，你也可以自行命名👋 打开utterance 点击here,找到C</description>
+    </item>
+    
+  </channel>
+</rss>
