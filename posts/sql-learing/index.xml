@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>🏖 Life on Grace&#39;s Office</title>
+    <title>💎 SQl learning on Grace&#39;s Office</title>
     <link>https://Graceoooffice.github.io/posts/sql-learing/</link>
-    <description>Recent content in 🏖 Life on Grace&#39;s Office</description>
+    <description>Recent content in 💎 SQl learning on Grace&#39;s Office</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 May 2022 00:18:15 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/posts/sql-learing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Mar 2023 17:33:27 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/posts/sql-learing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Life</title>
-      <link>https://Graceoooffice.github.io/posts/sql-learing/life/</link>
-      <pubDate>Thu, 05 May 2022 00:18:15 +0800</pubDate>
+      <title>SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法</title>
+      <link>https://Graceoooffice.github.io/posts/sql-learing/sql01/</link>
+      <pubDate>Sat, 11 Mar 2023 17:33:27 +0800</pubDate>
       
-      <guid>https://Graceoooffice.github.io/posts/sql-learing/life/</guid>
-      <description>This is a test for the life category</description>
+      <guid>https://Graceoooffice.github.io/posts/sql-learing/sql01/</guid>
+      <description>一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（</description>
+    </item>
+    
+    <item>
+      <title>SQL中案例实例02—查找收入比经理高的员工，两表连接列比较</title>
+      <link>https://Graceoooffice.github.io/posts/sql-learing/sql02/</link>
+      <pubDate>Sat, 11 Mar 2023 17:33:27 +0800</pubDate>
+      
+      <guid>https://Graceoooffice.github.io/posts/sql-learing/sql02/</guid>
+      <description>题目描述：查找收入比经理高的员工。 下图表头的含义解释-雇员的ID、姓名、工资和经理的ID。 一、解题思路一 一、将是经理和不是经理的信息分开为两</description>
     </item>
     
   </channel>

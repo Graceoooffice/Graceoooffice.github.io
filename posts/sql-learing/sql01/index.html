@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法 | Grace&#39;s Office</title>
+<meta name="keywords" content="">
+<meta name="description" content="一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（">
+<meta name="author" content="Grace">
+<link rel="canonical" href="https://Graceoooffice.github.io/posts/sql-learing/sql01/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f930b34288a607d30fe6878524e8b5b4a132bf4ebfda6ca5e4795120c773d498.css" integrity="sha256-&#43;TCzQoimB9MP5oeFJOi1tKEyv06/2myl5HlRIMdz1Jg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://Graceoooffice.github.io/img/Q.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Graceoooffice.github.io/img/Q.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Graceoooffice.github.io/img/Q.jpg">
+<link rel="apple-touch-icon" href="https://Graceoooffice.github.io/Q.jpg">
+<link rel="mask-icon" href="https://Graceoooffice.github.io/Q.jpg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法" />
+<meta property="og:description" content="一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Graceoooffice.github.io/posts/sql-learing/sql01/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-11T17:33:27+08:00" />
+<meta property="article:modified_time" content="2023-03-11T00:18:23+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法"/>
+<meta name="twitter:description" content="一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "📚Blog",
+      "item": "https://Graceoooffice.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法",
+      "item": "https://Graceoooffice.github.io/posts/sql-learing/sql01/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法",
+  "name": "SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法",
+  "description": "一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（）的使用 IFNULL(expr1,expr2)的用法：\n假如expr1 不为 NULL，则 IFNULL() 的返回值为 expr1; 否则其返回值为 expr2。IFNULL()的返回值是数字或是字符串，具体情况取决于其所使用的语境。\nmysql\u003e SELECT IFNULL(1,0); -\u003e 1 mysql\u003e SELECT IFNULL(NULL,10); -\u003e 10 mysql\u003e SELECT IFNULL(1/0,10); -\u003e 10 mysql\u003e SELECT IFNULL(1/0,‘yes’);\n-\u003e ‘yes’\nIFNULL(expr1,expr2)的默认结果值为两个表达式中更加“通用”的一个，顺序为STRING、 REAL或INTEGER。假设一个基于表达式的表的情况或MySQL必须在内存储器中储存一个临时表中IFNULL()的返回值： CREATE TABLE tmp SELECT IFNULL(1,’test’) AS test； 在这个例子中，测试列的类型为 CHAR(4)。\n1.2 完整代码 1 2 3 4 5 6 7 8 9 10 11 select ifNull( (select distinct a.salary as SecondHighestSalary from (select id ,salary ,dense_rank() over(order by salary desc) as rn from Employee ) a where a.rn=2) ,null) as SecondHighestSalary 二、返回NUll的对象—找出所有从不订购任何东西的客户 题目描述：某网站包含两个表，Customers 表和 Orders 表。编写一个 SQL 查询，找出所有从不订购任何东西的客户\n1.1 isnull（）的使用 isnull(expr) 的用法： 如expr 为null，那么isnull() 的返回值为 1，否则返回值为 0。 mysql\u003e select isnull(1+1); -\u003e 0 mysql\u003e select isnull(1/0); -\u003e 1 使用= 的null 值对比通常是错误的。\nisnull() 函数同 is null比较操作符具有一些相同的特性。请参见有关is null 的说明\n1.2 完整代码 1 2 3 4 5 6 select name from customers left join orders on customers.id = orders.customerId where isnull(customerId); 使用where not in\n1 2 3 select name from customers where id not in ( select customerId from orders ); 三、参考链接 3.2 NULL（）的使用 NULLIF(expr1,expr2) 的用法：\n如果expr1 = expr2 成立，那么返回值为NULL，否则返回值为 expr1。这和CASE WHEN expr1 = expr2 THEN NULL ELSE expr1 END相同。 mysql\u003e SELECT NULLIF(1,1);\n-\u003e NULL mysql\u003e SELECT NULLIF(1,2); -\u003e 1 如果参数不相等，则 MySQL 两次求得的值为 expr1\nsql中ifnull(),isnull(),nullif()的使用方法 https://blog.csdn.net/qq_39889961/article/details/85872342\n",
+  "wordCount" : "762",
+  "inLanguage": "en",
+  "datePublished": "2023-03-11T17:33:27+08:00",
+  "dateModified": "2023-03-11T00:18:23+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Grace"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Graceoooffice.github.io/posts/sql-learing/sql01/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grace's Office",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Graceoooffice.github.io/img/Q.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Graceoooffice.github.io" accesskey="h" title="Home (Alt + H)">
+                <img src="https://Graceoooffice.github.io/img/Q.jpg" alt="" aria-label="logo"
+                    height="35">Home</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Graceoooffice.github.io/search" title="🔍Search (Alt &#43; /)" accesskey=/>
+                    <span>🔍Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/" title="🔮Home">
+                    <span>🔮Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/posts" title="📚Blog">
+                    <span>📚Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/archives/" title="⏳TimeLine">
+                    <span>⏳TimeLine</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/tags" title="🔖Tags">
+                    <span>🔖Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/about" title="👩🏻‍💻About">
+                    <span>👩🏻‍💻About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://Graceoooffice.github.io">Home</a>&nbsp;»&nbsp;<a href="https://Graceoooffice.github.io/posts/">📚Blog</a></div>
+    <h1 class="post-title">
+      SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法
+    </h1>
+    <div class="post-meta"><span title='2023-03-11 17:33:27 +0800 HKT'>2023-03-11</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Grace
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e4%b8%80%e6%9f%a5%e8%af%a2%e5%ba%94%e8%af%a5%e8%bf%94%e5%9b%9e-null-%e5%a6%82%e6%9e%9c%e4%b8%8d%e5%ad%98%e5%9c%a8%e6%9f%a5%e8%af%a2%e5%ba%94%e8%af%a5%e8%bf%94%e5%9b%9e-null" aria-label="一、查询应该返回 null —如果不存在，查询应该返回 null">一、查询应该返回 null —如果不存在，查询应该返回 null</a><ul>
+                        
+                <li>
+                    <a href="#11-ifnull%e7%9a%84%e4%bd%bf%e7%94%a8" aria-label="1.1 iFnull（）的使用">1.1 iFnull（）的使用</a></li>
+                <li>
+                    <a href="#12-%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81" aria-label="1.2 完整代码">1.2 完整代码</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%ba%8c%e8%bf%94%e5%9b%9enull%e7%9a%84%e5%af%b9%e8%b1%a1%e6%89%be%e5%87%ba%e6%89%80%e6%9c%89%e4%bb%8e%e4%b8%8d%e8%ae%a2%e8%b4%ad%e4%bb%bb%e4%bd%95%e4%b8%9c%e8%a5%bf%e7%9a%84%e5%ae%a2%e6%88%b7" aria-label="二、返回NUll的对象—找出所有从不订购任何东西的客户">二、返回NUll的对象—找出所有从不订购任何东西的客户</a><ul>
+                        
+                <li>
+                    <a href="#11-isnull%e7%9a%84%e4%bd%bf%e7%94%a8" aria-label="1.1 isnull（）的使用">1.1 isnull（）的使用</a></li>
+                <li>
+                    <a href="#12-%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81-1" aria-label="1.2 完整代码">1.2 完整代码</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%b8%89%e5%8f%82%e8%80%83%e9%93%be%e6%8e%a5" aria-label="三、参考链接">三、参考链接</a><ul>
+                        
+                <li>
+                    <a href="#32-null%e7%9a%84%e4%bd%bf%e7%94%a8" aria-label="3.2 NULL（）的使用">3.2 NULL（）的使用</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="一查询应该返回-null-如果不存在查询应该返回-null">一、查询应该返回 null —如果不存在，查询应该返回 null<a hidden class="anchor" aria-hidden="true" href="#一查询应该返回-null-如果不存在查询应该返回-null">#</a></h2>
+<p>题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null
+<img loading="lazy" src="https://img-blog.csdnimg.cn/4b9116d6ce6c46c49fb418ba615546bc.png" alt="在这里插入图片描述"  />
+
+<img loading="lazy" src="https://img-blog.csdnimg.cn/8e8df9e267e34abe9fdc44006fa1cb23.png" alt="在这里插入图片描述"  />
+</p>
+<h3 id="11-ifnull的使用">1.1 iFnull（）的使用<a hidden class="anchor" aria-hidden="true" href="#11-ifnull的使用">#</a></h3>
+<p><strong>IFNULL(expr1,expr2)的用法：</strong></p>
+<p>假如expr1   不为   NULL，则   IFNULL()   的返回值为   expr1;
+否则其返回值为   expr2。IFNULL()的返回值是数字或是字符串，具体情况取决于其所使用的语境。</p>
+<p>mysql&gt;   SELECT   IFNULL(1,0);
+-&gt;   1
+mysql&gt;   SELECT   IFNULL(NULL,10);
+-&gt;   10
+mysql&gt;   SELECT   IFNULL(1/0,10);
+-&gt;   10
+mysql&gt;   SELECT
+IFNULL(1/0,&lsquo;yes&rsquo;);</p>
+<p>-&gt;   &lsquo;yes&rsquo;</p>
+<p>IFNULL(expr1,expr2)的默认结果值为两个表达式中更加“通用”的一个，顺序为STRING、   REAL或INTEGER。假设一个基于表达式的表的情况或MySQL必须在内存储器中储存一个临时表中IFNULL()的返回值：
+CREATE   TABLE   tmp   SELECT   IFNULL(1,&rsquo;test&rsquo;)   AS   test；
+在这个例子中，测试列的类型为   CHAR(4)。</p>
+<h3 id="12-完整代码">1.2 完整代码<a hidden class="anchor" aria-hidden="true" href="#12-完整代码">#</a></h3>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>select ifNull( 
+</span></span><span style="display:flex;"><span>    (select distinct
+</span></span><span style="display:flex;"><span>a.salary as SecondHighestSalary
+</span></span><span style="display:flex;"><span>from (select
+</span></span><span style="display:flex;"><span>id
+</span></span><span style="display:flex;"><span>,salary
+</span></span><span style="display:flex;"><span>,dense_rank() over(order by salary desc) as rn
+</span></span><span style="display:flex;"><span>from Employee
+</span></span><span style="display:flex;"><span>) a  where a.rn=2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>,null) as SecondHighestSalary
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="二返回null的对象找出所有从不订购任何东西的客户">二、返回NUll的对象—找出所有从不订购任何东西的客户<a hidden class="anchor" aria-hidden="true" href="#二返回null的对象找出所有从不订购任何东西的客户">#</a></h2>
+<p>题目描述：某网站包含两个表，Customers 表和 Orders 表。编写一个 SQL 查询，找出所有从不订购任何东西的客户</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/35d4864021e64d80874ea5b92ad9a709.png" alt="在这里插入图片描述"  />
+</p>
+<h3 id="11-isnull的使用">1.1 isnull（）的使用<a hidden class="anchor" aria-hidden="true" href="#11-isnull的使用">#</a></h3>
+<p>isnull(expr) 的用法：
+如expr 为null，那么isnull() 的返回值为 1，否则返回值为 0。
+mysql&gt; select isnull(1+1);
+-&gt; 0
+mysql&gt; select isnull(1/0);
+-&gt; 1
+使用= 的null 值对比通常是错误的。</p>
+<p>isnull() 函数同 is null比较操作符具有一些相同的特性。请参见有关is null 的说明</p>
+<h3 id="12-完整代码-1">1.2 完整代码<a hidden class="anchor" aria-hidden="true" href="#12-完整代码-1">#</a></h3>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>select 
+</span></span><span style="display:flex;"><span>name
+</span></span><span style="display:flex;"><span>from customers 
+</span></span><span style="display:flex;"><span>left join orders
+</span></span><span style="display:flex;"><span>on customers.id = orders.customerId 
+</span></span><span style="display:flex;"><span>where isnull(customerId);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用where not in</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>select name from customers where id not in (
+</span></span><span style="display:flex;"><span>	select customerId from orders
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="三参考链接">三、参考链接<a hidden class="anchor" aria-hidden="true" href="#三参考链接">#</a></h2>
+<h3 id="32-null的使用">3.2 NULL（）的使用<a hidden class="anchor" aria-hidden="true" href="#32-null的使用">#</a></h3>
+<p>NULLIF(expr1,expr2)  的用法：<br>
+如果expr1
+=   expr2     成立，那么返回值为NULL，否则返回值为   expr1。这和CASE   WHEN   expr1   =   expr2
+THEN   NULL   ELSE   expr1   END相同。
+mysql&gt;   SELECT
+NULLIF(1,1);</p>
+<p>-&gt;   NULL
+mysql&gt;   SELECT   NULLIF(1,2);
+-&gt;   1
+如果参数不相等，则   MySQL   两次求得的值为     expr1</p>
+<p><strong>sql中ifnull(),isnull(),nullif()的使用方法</strong>
+<em><a href="https://blog.csdn.net/qq_39889961/article/details/8587234">https://blog.csdn.net/qq_39889961/article/details/8587234</a></em>2</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Graceoooffice.github.io/tags/blog/">blog</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作</span>
+  </a>
+  <a class="next" href="https://Graceoooffice.github.io/posts/sql-learing/sql02/">
+    <span class="title">Next »</span>
+    <br>
+    <span>SQL中案例实例02—查找收入比经理高的员工，两表连接列比较</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://Graceoooffice.github.io">Grace&#39;s Office</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作 | Grace&#39;s Office</title>
+<meta name="keywords" content="">
+<meta name="description" content="阅读前提 👋大家好，我已经试图做到从我开始的流程开始介绍，然后一步步的操作讲解，但是由于在了解GIt操作时遇到了很多问题，因此我在解决操作这些">
+<meta name="author" content="Grace">
+<link rel="canonical" href="https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f930b34288a607d30fe6878524e8b5b4a132bf4ebfda6ca5e4795120c773d498.css" integrity="sha256-&#43;TCzQoimB9MP5oeFJOi1tKEyv06/2myl5HlRIMdz1Jg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://Graceoooffice.github.io/img/Q.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Graceoooffice.github.io/img/Q.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Graceoooffice.github.io/img/Q.jpg">
+<link rel="apple-touch-icon" href="https://Graceoooffice.github.io/Q.jpg">
+<link rel="mask-icon" href="https://Graceoooffice.github.io/Q.jpg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作" />
+<meta property="og:description" content="阅读前提 👋大家好，我已经试图做到从我开始的流程开始介绍，然后一步步的操作讲解，但是由于在了解GIt操作时遇到了很多问题，因此我在解决操作这些" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-11T17:33:27+08:00" />
+<meta property="article:modified_time" content="2023-03-11T00:18:23+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作"/>
+<meta name="twitter:description" content="阅读前提 👋大家好，我已经试图做到从我开始的流程开始介绍，然后一步步的操作讲解，但是由于在了解GIt操作时遇到了很多问题，因此我在解决操作这些"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "📚Blog",
+      "item": "https://Graceoooffice.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作",
+      "item": "https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作",
+  "name": "【自学计划系列01】初学者从0开始的Git\/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作",
+  "description": "阅读前提 👋大家好，我已经试图做到从我开始的流程开始介绍，然后一步步的操作讲解，但是由于在了解GIt操作时遇到了很多问题，因此我在解决操作这些",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "阅读前提 👋大家好，我已经试图做到从我开始的流程开始介绍，然后一步步的操作讲解，但是由于在了解GIt操作时遇到了很多问题，因此我在解决操作这些问题的时候，促使我的整理流程不够十分顺利（只能说是这个饭没有盛满了😢），但是我还是希望你能从这篇中收获的你想要的东西\n摘要：什么是Github？ 当我们想要使用一个工具的时候我们还需要使用这个工具能做些什么，因此当我Google搜索了相关信息后得到了一个最好的解释⬇️\n相关概念 只有在了解好所有基本的一个概念才能更好的掌握起运行原理，因此本文将根据重点来树立相关的概念知识，在我们后续所要运行的Git/GitHub/Vscode工具中。\nGit 参考链接03中具有完整的解释，或者直接点击这里进入 分布式版本控制系统（该部分在我前几章博客中有提及到），Git的工作流程是使用者先从仓库（Repository）中下载到工作目录，修改完后再提交到仓库中。==个人觉得==有点类似于取回来在本地（pull）然后修改了在放回去（checkout）\n工作流程 当开发者要建立一个开发项目时，要为这个项目建立一个目录，以及使用git init指令建立一个这个项目的储存库（Repository )。这个目录可称为工作目录（Working Directory），开发项目所有的档案都储存在这个目录下，而执行与项目相关的Git指令，也都是在工作目录下执行。 Git还会在.git目录下建立一个名称为index的索引档案，作为记录专案所有档案的处理状态，例如是储存在本机储存库中的已提交（committed）档案，或是已变更但尚未提交到本机储存库的已修改（modified）档案，或也有一种状态是在已修改档案中标记出要作为提交到下一版本用的已暂存（staged）档案。这个索引档是用来管理档案修改以及是否要提交到储存库的记录。 分支Brach、Merge 一般会将稳定的版本作为主干，其他变动或则是正在==开发的==版本则作为分支，当开发状态完成后在添加进主支里来保证整体代码的完整不易破坏。 克隆Clone和Fork 复制（Clone）指令是把在远端的仓库里的所有內容复制到本地，建立起本地的仓库和工作目录，而（Fork）則是把別人项目的远程仓库里的內容复制一份到自己的远程仓库里。因此在我们fork完GitHub里他人项目后我们无法直接使用，因为项目被放置在我们自己的远程仓库里，如想要运行修改项目代码，可以做的一个是直接下载download，另一个是可以直接使用git里的==clone到我们的本地==上（该部分使用vs code十分方便，后续会进行提及如何实现）\n资料同步指令Push、Pull、Pull Request -（Push）指令，可以把自己目前本机本地的仓库内容上传到==远程仓库==（我愿类比为网盘的概念）\n（Pull）指令則把远程仓库（网盘）的下载到我们的本地，并将远程分支合并到本地的分支。注意Pull並不像Clone指令会下載完整项目各版本內容。 开发者使用Pull获得其他人开放权限的网盘程序，也可以将自己修改的代码程序push到别人的网盘里。这两个操作可以实现开发共享代码 而pull Request是主动的要求第三方开发者来进入自己开发的程序，将本地仓库上的代码程序放在对方的仓库中，。例如A成員可通过Pull Request要求B成員，將A成員修改後的程序合并入B成員的开发项目中。 GitHub 其使用了Git的核心来完成，是一个线上协作平台，使用议题（Issue）、新开分支（Branch）、维基（Wiki）、拉取要求（Pull Request）等功能，开发者能更有效率的进行版本控制，并且在线上合作、讨论专案及透过GitHub分享程式码。 点击该链接有具体的案例流程，该文章不做重复阐述，仅提出部分注意点\n（这里有点类似于kaggle上保存文件后会产生多个版本，而不是运行完自动保存关闭） 没提交一次会产生一次版本，多次提交commit后才一次发布Push到我们的Github云端仓库里，而在我们提及commit时会要求输入相关信息来说明版本做了哪些变动，以此来记录变更。 使用Git (结合VScode快捷实现) 我们已经大致上了解了什么是Git以及GitHub的一个基本使用概要。那我们具体应该如何使用我们的网盘呢？ 下面我们来进入实操并且我们帮助你解决两个重要的问题：\n==如何上传我们的项目（代码）？== ==如何下载别人的项目（代码）并在本地运行修改？== 1.安装 注意此文章是Mac限定版，参考here使用 step:\nGoogle搜索关键词git mac download 根据官网页面完成brew安装 使用brew 安装git 在终端输入查看版本来确认是否安装成功： git –version 2.创建ssh key、配置git 1、设置username和email（github每次commit都会记录他们）\n1 2 git config --global user.name \"your_name\" git config --global user.email \"xxxxxx@qq.com\" 2、通过终端命令创建ssh key\n1 ssh-keygen -t rsa -C \"xxxx@qq.com\" 3.完成上述操作后会要求你输入你设定的密码，并且储存在相关文件中 4.登入你的GitHub账户，添加ssh key，点击Settings，点击New SSH key， 添加key。\n添加的KEY使用在终端中运行下面这行代码获得⬇️ -注意我已经进入到我存放key目录下了） 1 (base) h@HdeMacBook-Air-2 .ssh % cat id_rsa.pub 接着使用下面这行代码来进行配置⬇️ 1 (base) h@HdeMacBook-Air-2 .ssh % ssh -T git@github.com P1:如何上传我们的项目（代码）？ 事实上，我花费了一些时间来查看相关网络资料来试图系统性的来了解整体的步骤，但是均失败且不太易解决，因此选择了Youtube上这个方法暂时代替我想实现该功能的需求，点击here可以查看该视频,十分详细，如后续有更好的学习再进行补充\n打开我们的vs code文件夹，注意这个文件下就是你想要上传的项目文件夹⬇️ 请确保你的VScode已经登入到你的GitHub账户里 点击这个图标，会有两个选择，我们选择第二个 事实上，我发现有时候不是一定会出现这个选择界面，因此我们可以使用👇这个方法来实现\n点击完进行选择，根据你的需求来选，下图只是其中一个选择页面 🎉 ==此时就完成了我们所有的操作，你可以去你的GitHub账户下仓库里找找看有没有！== 🎉 如何下载别人的项目（代码）并在本地运行修改？ 首先我们先fork别人的项目到自己的仓库里 接着你会在自己的账户仓库里找到他，这很好。请复制这个信息 请先在本地创建文件夹来放置你后面clone下来的文件，然后我们需要在终端里运行这个命令，红色框里是你复制的内容 1 git clone https://github.com/Graceoooffice/Face_recognition.git 接着就可以使用VScode的打开文件夹来对其进行修改 🎉 ==此时你已经完成了所有的操作== 🎉 补充知识点 可能会涉及到的其他一些技能来帮助你更快的实现 mac 终端一些简单操作指令\ncd.. 返回上一级目录 cd myfolder 进入myfolder目录 mkdir test 新建目录 rm -rf test 删除目录(适用于空的目录) pwd 显示当前目前 vs code的简单操作指令：如何打开markdown（右键文件-打开预览）\n参考资料 再次感谢网友们发出的学习攻略，个人根据资料和自身情况完成具体的一些实操过程 01MAC上Git安装与GitHub基本使用 02在 vscode 中使用 Git ：拉取、提交、克隆 03 Git里常见的名词解释，十分具体但是繁体字 04同步你的Fork仓库\n",
+  "wordCount" : "2894",
+  "inLanguage": "en",
+  "datePublished": "2023-03-11T17:33:27+08:00",
+  "dateModified": "2023-03-11T00:18:23+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Grace"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grace's Office",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Graceoooffice.github.io/img/Q.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Graceoooffice.github.io" accesskey="h" title="Home (Alt + H)">
+                <img src="https://Graceoooffice.github.io/img/Q.jpg" alt="" aria-label="logo"
+                    height="35">Home</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Graceoooffice.github.io/search" title="🔍Search (Alt &#43; /)" accesskey=/>
+                    <span>🔍Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/" title="🔮Home">
+                    <span>🔮Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/posts" title="📚Blog">
+                    <span>📚Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/archives/" title="⏳TimeLine">
+                    <span>⏳TimeLine</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/tags" title="🔖Tags">
+                    <span>🔖Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Graceoooffice.github.io/about" title="👩🏻‍💻About">
+                    <span>👩🏻‍💻About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://Graceoooffice.github.io">Home</a>&nbsp;»&nbsp;<a href="https://Graceoooffice.github.io/posts/">📚Blog</a></div>
+    <h1 class="post-title">
+      【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作
+    </h1>
+    <div class="post-meta"><span title='2023-03-11 17:33:27 +0800 HKT'>2023-03-11</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Grace
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e9%98%85%e8%af%bb%e5%89%8d%e6%8f%90" aria-label="阅读前提">阅读前提</a></li>
+                <li>
+                    <a href="#%e6%91%98%e8%a6%81%e4%bb%80%e4%b9%88%e6%98%afgithub" aria-label="摘要：什么是Github？">摘要：什么是Github？</a></li>
+                <li>
+                    <a href="#%e7%9b%b8%e5%85%b3%e6%a6%82%e5%bf%b5" aria-label="相关概念">相关概念</a><ul>
+                        
+                <li>
+                    <a href="#git" aria-label="Git">Git</a><ul>
+                        
+                <li>
+                    <a href="#%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8bhttpswwwithomecomtwnews95283" aria-label="工作流程"><a href="https://www.ithome.com.tw/news/95283">工作流程</a></a></li>
+                <li>
+                    <a href="#%e5%88%86%e6%94%afbrachmerge" aria-label="分支Brach、Merge">分支Brach、Merge</a></li>
+                <li>
+                    <a href="#%e5%85%8b%e9%9a%86clone%e5%92%8cfork" aria-label="克隆Clone和Fork">克隆Clone和Fork</a></li>
+                <li>
+                    <a href="#%e8%b5%84%e6%96%99%e5%90%8c%e6%ad%a5%e6%8c%87%e4%bb%a4pushpullpull-request" aria-label="资料同步指令Push、Pull、Pull Request">资料同步指令Push、Pull、Pull Request</a></li></ul>
+                </li>
+                <li>
+                    <a href="#github" aria-label="GitHub">GitHub</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%bd%bf%e7%94%a8git-%e7%bb%93%e5%90%88vscode%e5%bf%ab%e6%8d%b7%e5%ae%9e%e7%8e%b0" aria-label="使用Git (结合VScode快捷实现)">使用Git (结合VScode快捷实现)</a><ul>
+                        
+                <li>
+                    <a href="#1%e5%ae%89%e8%a3%85" aria-label="1.安装">1.安装</a></li>
+                <li>
+                    <a href="#2%e5%88%9b%e5%bb%bassh-key%e9%85%8d%e7%bd%aegit" aria-label="2.创建ssh key、配置git">2.创建ssh key、配置git</a></li>
+                <li>
+                    <a href="#p1%e5%a6%82%e4%bd%95%e4%b8%8a%e4%bc%a0%e6%88%91%e4%bb%ac%e7%9a%84%e9%a1%b9%e7%9b%ae%e4%bb%a3%e7%a0%81" aria-label="P1:如何上传我们的项目（代码）？">P1:如何上传我们的项目（代码）？</a></li>
+                <li>
+                    <a href="#%e5%a6%82%e4%bd%95%e4%b8%8b%e8%bd%bd%e5%88%ab%e4%ba%ba%e7%9a%84%e9%a1%b9%e7%9b%ae%e4%bb%a3%e7%a0%81%e5%b9%b6%e5%9c%a8%e6%9c%ac%e5%9c%b0%e8%bf%90%e8%a1%8c%e4%bf%ae%e6%94%b9" aria-label="如何下载别人的项目（代码）并在本地运行修改？">如何下载别人的项目（代码）并在本地运行修改？</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e8%a1%a5%e5%85%85%e7%9f%a5%e8%af%86%e7%82%b9" aria-label="补充知识点">补充知识点</a></li>
+                <li>
+                    <a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99" aria-label="参考资料">参考资料</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="阅读前提">阅读前提<a hidden class="anchor" aria-hidden="true" href="#阅读前提">#</a></h1>
+<p>👋大家好，我已经试图做到从我开始的流程开始介绍，然后一步步的操作讲解，但是由于在了解GIt操作时遇到了很多问题，因此我在解决操作这些问题的时候，促使我的整理流程不够十分顺利（只能说是这个饭没有盛满了😢），但是我还是希望你能从这篇中收获的你想要的东西</p>
+<h1 id="摘要什么是github">摘要：什么是Github？<a hidden class="anchor" aria-hidden="true" href="#摘要什么是github">#</a></h1>
+<p>当我们想要使用一个工具的时候我们还需要使用这个工具能做些什么，因此当我<strong>Google搜索</strong>了相关信息后得到了一个最好的解释⬇️</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/4b38bda2f03040f09ccc9d5a17ab2fa5.png" alt="在这里插入图片描述"  />
+</p>
+<h1 id="相关概念">相关概念<a hidden class="anchor" aria-hidden="true" href="#相关概念">#</a></h1>
+<p>只有在了解好所有基本的一个概念才能更好的掌握起运行原理，因此本文将根据重点来树立相关的概念知识，在我们后续所要运行的Git/GitHub/Vscode工具中。</p>
+<h2 id="git">Git<a hidden class="anchor" aria-hidden="true" href="#git">#</a></h2>
+<p><em><a href="https://www.ithome.com.tw/news/95283">参考链接03中具有完整的解释，或者直接点击这里进入</a></em>
+分布式版本控制系统（该部分在我前几章博客中有提及到），Git的工作流程是使用者先从仓库（Repository）中下载到工作目录，修改完后再提交到仓库中。==个人觉得==有点类似于取回来在本地（pull）然后修改了在放回去（checkout）</p>
+<h3 id="工作流程httpswwwithomecomtwnews95283"><a href="https://www.ithome.com.tw/news/95283">工作流程</a><a hidden class="anchor" aria-hidden="true" href="#工作流程httpswwwithomecomtwnews95283">#</a></h3>
+<ul>
+<li>当开发者要建立一个开发项目时，要为这个项目建立一个<em><strong>目录</strong></em>，以及使用git init指令建立一个这个项目的<strong>储存库（Repository )</strong>。这个目录可称为工作目录（Working Directory），开发项目所有的档案都储存在这个目录下，而执行与项目相关的<strong>Git指令，也都是在工作目录下执行</strong>。</li>
+<li>Git还会在.git目录下建立一个名称为index的索引档案，作为记<strong>录专案所有档案的处理状态</strong>，例如是储存在本机储存库中的已提交（committed）档案，或是已变更但尚未提交到本机储存库的已修改（modified）档案，或也有一种状态是在已修改档案中标记出要作为提交到下一版本用的已暂存（staged）档案。这个索引档是用来管理档案修改以及是否要提交到储存库的记录。</li>
+</ul>
+<h3 id="分支brachmerge">分支Brach、Merge<a hidden class="anchor" aria-hidden="true" href="#分支brachmerge">#</a></h3>
+<ul>
+<li>一般会将稳定的版本作为主干，其他变动或则是正在==开发的==版本则作为分支，当开发状态完成后在添加进主支里来保证整体代码的完整不易破坏。</li>
+</ul>
+<h3 id="克隆clone和fork">克隆Clone和Fork<a hidden class="anchor" aria-hidden="true" href="#克隆clone和fork">#</a></h3>
+<p>复制（Clone）指令是把在远端的仓库里的所有內容复制到本地，建立起本地的仓库和工作目录，而（Fork）則是把別人项目的远程仓库里的內容复制一份到自己的远程仓库里。<strong>因此</strong>在我们fork完GitHub里他人项目后我们无法直接使用，因为项目被放置在我们自己的远程仓库里，如想要运行修改项目代码，可以做的一个是直接下载download，另一个是可以直接使用git里的==clone到我们的本地==上（该部分使用<strong>vs code</strong>十分方便，后续会进行提及如何实现）</p>
+<h3 id="资料同步指令pushpullpull-request">资料同步指令Push、Pull、Pull Request<a hidden class="anchor" aria-hidden="true" href="#资料同步指令pushpullpull-request">#</a></h3>
+<p>-（Push）指令，可以把自己目前本机本地的仓库内容上传到==远程仓库==（我愿类比为<strong>网盘</strong>的概念）</p>
+<ul>
+<li>（Pull）指令則把远程仓库（网盘）的下载到我们的本地，并将远程分支合并到本地的分支。注意Pull並不像Clone指令会下載<strong>完整</strong>项目各版本內容。</li>
+<li>开发者使用Pull获得其他人开放权限的网盘程序，也可以将自己修改的代码程序push到别人的网盘里。这两个操作可以实现<strong><em>开发共享代</em>码</strong></li>
+<li>而pull Request是主动的要求第三方开发者来进入自己开发的程序，将本地仓库上的代码程序放在对方的仓库中，。例如A成員可通过Pull Request要求B成員，將A成員修改後的程序合并入B成員的开发项目中。</li>
+</ul>
+<h2 id="github">GitHub<a hidden class="anchor" aria-hidden="true" href="#github">#</a></h2>
+<p>其使用了Git的核心来完成，是一个线上协作平台，使用议题（Issue）、新开分支（Branch）、维基（Wiki）、拉取要求（Pull Request）等功能，开发者能更有效率的进行版本控制，并且在线上合作、讨论专案及透过GitHub分享程式码。
+<a href="https://www.ithome.com.tw/news/95283"><strong>点击该链接有具体的案例流程，该文章不做重复阐述，仅提出部分注意点</strong></a></p>
+<ul>
+<li>（这里有点类似于<strong>kaggle</strong>上保存文件后会产生多个版本，而不是运行完自动保存关闭）</li>
+<li>没提交一次会产生一次版本，多次提交commit后才一次发布Push到我们的Github云端仓库里，而在我们提及commit时会要求输入相关信息来说明版本做了哪些变动，以此来记录变更。</li>
+</ul>
+<h1 id="使用git-结合vscode快捷实现">使用Git (结合VScode快捷实现)<a hidden class="anchor" aria-hidden="true" href="#使用git-结合vscode快捷实现">#</a></h1>
+<p>我们已经大致上了解了什么是Git以及GitHub的一个基本使用概要。那我们具体应该如何使用我们的<code>网盘</code>呢？
+下面我们来进入实操并且我们帮助你解决两个重要的<strong>问题</strong>：</p>
+<ul>
+<li>==如何上传我们的项目（代码）？==</li>
+<li>==如何下载别人的项目（代码）并在本地运行修改？==</li>
+</ul>
+<h2 id="1安装">1.安装<a hidden class="anchor" aria-hidden="true" href="#1安装">#</a></h2>
+<p>注意此文章是<strong>Mac限定版</strong>，参考<a href="https://www.jianshu.com/p/7edb6b838a2e"><code>here</code></a>使用
+step:</p>
+<ul>
+<li>Google搜索关键词git mac download</li>
+<li>根据官网页面完成brew安装</li>
+<li>使用brew 安装git</li>
+<li>在终端输入查看版本来确认是否安装成功： git &ndash;version</li>
+</ul>
+<h2 id="2创建ssh-key配置git">2.创建ssh key、配置git<a hidden class="anchor" aria-hidden="true" href="#2创建ssh-key配置git">#</a></h2>
+<p>1、设置username和email（github每次commit都会记录他们）</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>git config --<span style="color:#fff;font-weight:bold">global</span> user.name <span style="color:#0ff;font-weight:bold">&#34;your_name&#34;</span>
+</span></span><span style="display:flex;"><span>git config --<span style="color:#fff;font-weight:bold">global</span> user.email <span style="color:#0ff;font-weight:bold">&#34;xxxxxx@qq.com&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2、通过终端命令创建ssh key</p>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#0ff;font-weight:bold">&#34;xxxx@qq.com&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3.完成上述操作后会要求你输入你设定的密码，并且储存在相关文件中
+4.登入你的GitHub账户，添加ssh key，点击Settings，点击New SSH key， 添加key。</p>
+<ul>
+<li>添加的<strong>KEY</strong>使用在终端中运行下面这行代码获得⬇️
+-注意我已经进入到我存放key目录下了）</li>
+</ul>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(base) h@HdeMacBook-Air-<span style="color:#ff0;font-weight:bold">2</span> .ssh % cat id_rsa.pub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>接着使用下面这行代码来进行配置⬇️</li>
+</ul>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(base) h@HdeMacBook-Air-<span style="color:#ff0;font-weight:bold">2</span> .ssh % ssh -T git@github.com 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="p1如何上传我们的项目代码">P1:如何上传我们的项目（代码）？<a hidden class="anchor" aria-hidden="true" href="#p1如何上传我们的项目代码">#</a></h2>
+<p>事实上，我花费了一些时间来查看相关网络资料来试图系统性的来了解整体的步骤，但是均失败且不太易解决，因此选择了Youtube上这个方法<strong>暂时</strong>代替我想实现该功能的需求，点击<a href="https://www.youtube.com/watch?v=shP-3p-2m6g"><code>here</code></a>可以查看该视频,十分详细，如后续有更好的学习再进行补充</p>
+<ul>
+<li>
+<p>打开我们的vs code文件夹，注意这个文件下就是你想要上传的项目文件夹⬇️<img loading="lazy" src="https://img-blog.csdnimg.cn/4e3ef0a10f574975a463f7ff91d175b1.png" alt="在这里插入图片描述"  />
+</p>
+</li>
+<li>
+<p>请确保你的VScode已经登入到你的GitHub账户里
+<img loading="lazy" src="https://img-blog.csdnimg.cn/034e7ea29bb449a888e9a2005a000316.png" alt="在这里插入图片描述"  />
+</p>
+</li>
+<li>
+<p>点击这个图标，会有两个选择，我们选择第二个
+<img loading="lazy" src="https://img-blog.csdnimg.cn/03279b5a180c4a1eb718cf23a1cd4836.png" alt="在这里插入图片描述"  />
+</p>
+</li>
+<li>
+<p>事实上，我发现有时候不是一定会出现这个选择界面，因此我们可以使用👇这个方法来实现</p>
+</li>
+</ul>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/ebcdabaa8ea542d783b2ebd755db7f01.png" alt="在这里插入图片描述"  />
+</p>
+<ul>
+<li>点击完进行选择，根据你的需求来选，下图只是其中一个选择页面<img loading="lazy" src="https://img-blog.csdnimg.cn/869505147eff44e98aba8e35e5138152.png" alt="在这里插入图片描述"  />
+
+🎉 ==此时就完成了我们所有的操作，你可以去你的GitHub账户下仓库里找找看有没有！== 🎉</li>
+</ul>
+<h2 id="如何下载别人的项目代码并在本地运行修改">如何下载别人的项目（代码）并在本地运行修改？<a hidden class="anchor" aria-hidden="true" href="#如何下载别人的项目代码并在本地运行修改">#</a></h2>
+<ul>
+<li>首先我们先fork别人的项目到自己的仓库里
+<img loading="lazy" src="https://img-blog.csdnimg.cn/9a5861e3f1274057b024327929cc9dd0.png" alt="在这里插入图片描述"  />
+</li>
+<li>接着你会在自己的账户仓库里找到他，这很好。请复制这个信息
+<img loading="lazy" src="https://img-blog.csdnimg.cn/c4a25643bb514d929720609160e18225.png" alt="在这里插入图片描述"  />
+</li>
+<li>请先在本地创建文件夹来放置你后面clone下来的文件，然后我们需要在终端里运行这个命令，红色框里是你复制的内容</li>
+</ul>
+<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>git clone https://github.com/Graceoooffice/Face_recognition.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" src="https://img-blog.csdnimg.cn/7d11c8b288b347b3af9da91a0baece77.png" alt="在这里插入图片描述"  />
+</p>
+<ul>
+<li>接着就可以使用VScode的打开文件夹来对其进行修改
+🎉 ==此时你已经完成了所有的操作== 🎉</li>
+</ul>
+<h1 id="补充知识点">补充知识点<a hidden class="anchor" aria-hidden="true" href="#补充知识点">#</a></h1>
+<p>可能会涉及到的其他一些技能来帮助你更快的实现
+<a href="https://blog.csdn.net/biggercoffee/article/details/50752910">mac 终端一些简单操作指令</a></p>
+<ul>
+<li>cd..   返回上一级目录</li>
+<li>cd myfolder   进入myfolder目录</li>
+<li>mkdir test  新建目录</li>
+<li>rm -rf test  删除目录(适用于空的目录)</li>
+<li>pwd  显示当前目前</li>
+</ul>
+<p>vs code的简单操作指令：如何打开markdown（右键文件-打开预览）</p>
+<h1 id="参考资料">参考资料<a hidden class="anchor" aria-hidden="true" href="#参考资料">#</a></h1>
+<p>再次感谢网友们发出的学习攻略，个人根据资料和自身情况完成具体的一些实操过程
+<a href="https://www.jianshu.com/p/7edb6b838a2e">01MAC上Git安装与GitHub基本使用</a>
+<a href="https://blog.csdn.net/jiangyu1013/article/details/84031418">02在 vscode 中使用 Git ：拉取、提交、克隆</a>
+<a href="https://www.ithome.com.tw/news/95283">03 Git里常见的名词解释，十分具体但是繁体字</a>
+<a href="https://doc.yonyoucloud.com/doc/wiki/project/github-basics/fork-synced.html">04同步你的Fork仓库</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Graceoooffice.github.io/tags/blog/">blog</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://Graceoooffice.github.io/posts/self-study-plan-series/ss01/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>【自学计划系列02】VScode操作问题汇总_实际案例结合python和Jupyter报错问题Mac限定版</span>
+  </a>
+  <a class="next" href="https://Graceoooffice.github.io/posts/sql-learing/sql01/">
+    <span class="title">Next »</span>
+    <br>
+    <span>SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://Graceoooffice.github.io">Grace&#39;s Office</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>👨🏻‍💻 技术 on Grace&#39;s Office</title>
+    <title>🤩 Self-Study Plan Series on Grace&#39;s Office</title>
     <link>https://Graceoooffice.github.io/posts/self-study-plan-series/</link>
-    <description>Recent content in 👨🏻‍💻 技术 on Grace&#39;s Office</description>
+    <description>Recent content in 🤩 Self-Study Plan Series on Grace&#39;s Office</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Feb 2023 12:20:21 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/posts/self-study-plan-series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 17:33:27 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/posts/self-study-plan-series/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tech1</title>
-      <link>https://Graceoooffice.github.io/posts/self-study-plan-series/tech1/</link>
-      <pubDate>Tue, 21 Feb 2023 12:20:21 +0800</pubDate>
+      <title>【自学计划系列02】VScode操作问题汇总_实际案例结合python和Jupyter报错问题Mac限定版</title>
+      <link>https://Graceoooffice.github.io/posts/self-study-plan-series/ss01/</link>
+      <pubDate>Sun, 12 Mar 2023 17:33:27 +0800</pubDate>
       
-      <guid>https://Graceoooffice.github.io/posts/self-study-plan-series/tech1/</guid>
-      <description></description>
+      <guid>https://Graceoooffice.github.io/posts/self-study-plan-series/ss01/</guid>
+      <description>1.VScode failed to start the kernel 无法连接kernel导致的报错 可能的报错的原因： 检查环境配置和版本问题 连接kernel选择有问题 我首先根据第二个可能的问题进行了</description>
     </item>
     
     <item>
-      <title>Tech</title>
-      <link>https://Graceoooffice.github.io/posts/self-study-plan-series/tech/</link>
-      <pubDate>Thu, 05 May 2022 00:17:58 +0800</pubDate>
+      <title>【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作</title>
+      <link>https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/</link>
+      <pubDate>Sat, 11 Mar 2023 17:33:27 +0800</pubDate>
       
-      <guid>https://Graceoooffice.github.io/posts/self-study-plan-series/tech/</guid>
-      <description>科技代码</description>
+      <guid>https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/</guid>
+      <description>阅读前提 👋大家好，我已经试图做到从我开始的流程开始介绍，然后一步步的操作讲解，但是由于在了解GIt操作时遇到了很多问题，因此我在解决操作这些</description>
     </item>
     
   </channel>

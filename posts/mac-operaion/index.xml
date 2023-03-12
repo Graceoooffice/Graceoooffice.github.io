@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>🧱 Blog on Grace&#39;s Office</title>
+    <title>🖥️ Mac Operaion on Grace&#39;s Office</title>
     <link>https://Graceoooffice.github.io/posts/mac-operaion/</link>
-    <description>Recent content in 🧱 Blog on Grace&#39;s Office</description>
+    <description>Recent content in 🖥️ Mac Operaion on Grace&#39;s Office</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 12 Mar 2023 17:33:27 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/posts/mac-operaion/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog_test1</title>
-      <link>https://Graceoooffice.github.io/posts/mac-operaion/blog_test1/</link>
+      <title>【Mac-jupyter】在Mac设备中更改jupyter的默认工作路径</title>
+      <link>https://Graceoooffice.github.io/posts/mac-operaion/mac02/</link>
       <pubDate>Sun, 12 Mar 2023 17:33:27 +0800</pubDate>
       
-      <guid>https://Graceoooffice.github.io/posts/mac-operaion/blog_test1/</guid>
-      <description>testtest title01</description>
+      <guid>https://Graceoooffice.github.io/posts/mac-operaion/mac02/</guid>
+      <description>tips： 请在未打开jupyter的情况下进行修改 step1：打开终端 command+空格——打开搜索🔍——输入“终端“ step2：获得更改</description>
     </item>
     
     <item>
-      <title>Blog</title>
-      <link>https://Graceoooffice.github.io/posts/mac-operaion/blog/</link>
-      <pubDate>Thu, 05 May 2022 00:18:23 +0800</pubDate>
+      <title>【Mac-rar文件解压】Mac系统如何打开rar压缩包文件_无需下载应用程序的快捷4步操作法</title>
+      <link>https://Graceoooffice.github.io/posts/mac-operaion/mac01/</link>
+      <pubDate>Sun, 12 Mar 2023 17:33:27 +0800</pubDate>
       
-      <guid>https://Graceoooffice.github.io/posts/mac-operaion/blog/</guid>
-      <description>tsettesttest</description>
+      <guid>https://Graceoooffice.github.io/posts/mac-operaion/mac01/</guid>
+      <description>0.查阅说明 大家好👋，因为本人属实很不喜欢下载很多应用程序在电脑上，因此在网络上找到了另外一种解决解压rar压缩包的方法（但是网络上的方法并</description>
     </item>
     
   </channel>
