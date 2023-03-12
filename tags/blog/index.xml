@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>【download nltk】使用download nltk报错，下载解压语料库</title>
+      <link>https://Graceoooffice.github.io/posts/error-fitting/error01/</link>
+      <pubDate>Sat, 11 Mar 2023 17:33:27 +0800</pubDate>
+      
+      <guid>https://Graceoooffice.github.io/posts/error-fitting/error01/</guid>
+      <description>在Python中运行该代码是报错——getaddrinfo failed 1 2 import nltk download nltk 解决方法： 方法一：官方查找文件下载 1.去官网下载文件 https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator 2.下载文件后</description>
+    </item>
+    
+    <item>
       <title>【自学计划系列01】初学者从0开始的Git/GitHubs详细使用喂饭学习笔记—Mac限定版结合VScode操作</title>
       <link>https://Graceoooffice.github.io/posts/self-study-plan-series/ss02/</link>
       <pubDate>Sat, 11 Mar 2023 17:33:27 +0800</pubDate>
