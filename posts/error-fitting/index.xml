@@ -6,11 +6,20 @@
     <description>Recent content in 🔧 Error-fitting on Grace&#39;s Office</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Mar 2023 17:33:27 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/posts/error-fitting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Mar 2023 14:29:27 +0800</lastBuildDate><atom:link href="https://Graceoooffice.github.io/posts/error-fitting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Git pageb博客无法显示图片】MD文档中图片规格要求以及字体颜色调整</title>
+      <link>https://Graceoooffice.github.io/posts/error-fitting/error0314/</link>
+      <pubDate>Tue, 14 Mar 2023 14:29:27 +0800</pubDate>
+      
+      <guid>https://Graceoooffice.github.io/posts/error-fitting/error0314/</guid>
+      <description>阅前说明 大家好👋，这是我为了修复我网页中无法显示图片和修改网页MD文档时总结的一些问题，并且提出了解决方案，因此具体的针对性需要看大家的需求</description>
+    </item>
+    
     <item>
       <title>【download nltk】使用download nltk报错，下载解压语料库</title>
       <link>https://Graceoooffice.github.io/posts/error-fitting/error01/</link>
-      <pubDate>Sat, 11 Mar 2023 17:33:27 +0800</pubDate>
+      <pubDate>Wed, 30 Mar 2022 17:33:27 +0800</pubDate>
       
       <guid>https://Graceoooffice.github.io/posts/error-fitting/error01/</guid>
       <description>在Python中运行该代码是报错——getaddrinfo failed 1 2 import nltk download nltk 解决方法： 方法一：官方查找文件下载 1.去官网下载文件 https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator 2.下载文件后</description>

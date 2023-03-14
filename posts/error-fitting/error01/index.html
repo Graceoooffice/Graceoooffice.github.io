@@ -60,8 +60,8 @@
 <meta property="og:description" content="在Python中运行该代码是报错——getaddrinfo failed 1 2 import nltk download nltk 解决方法： 方法一：官方查找文件下载 1.去官网下载文件 https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator 2.下载文件后" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Graceoooffice.github.io/posts/error-fitting/error01/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-11T17:33:27+08:00" />
-<meta property="article:modified_time" content="2023-03-11T00:18:23+08:00" />
+<meta property="article:published_time" content="2022-03-30T17:33:27+08:00" />
+<meta property="article:modified_time" content="2022-03-30T00:18:23+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="【download nltk】使用download nltk报错，下载解压语料库"/>
@@ -104,11 +104,11 @@
   "keywords": [
     ""
   ],
-  "articleBody": "在Python中运行该代码是报错——getaddrinfo failed\n1 2 import nltk download nltk 解决方法：\n方法一：官方查找文件下载 1.去官网下载文件 https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator 2.下载文件后解压，解压后文件如图所示 3.在使用nltk中 from nltk.corpus import brown brown.categories()报错后会出现下述的报错信息，关注红框里的路劲 4.在红框中的路劲中选择任意一个，注意：nltk_data是没有的，需要自行创建这个文件，我选择在E盘下创建这个文件夹。 5.将官网下载后解压文件中packages下的子文件夹全部复制到这个刚创建的nltk_data文件夹下 注意： 不是将packages文件下复制到创建的nltk_data，而是packages下的所有子文件夹。以corpora为例，路径是D:\\Anaconda\\share\\nltk_data\\corpora 而不是D:\\Anaconda\\share\\nltk_data\\packages\\corpora 6.由于报错信息提示 因此在E盘中的nltk_data中找到该文件，并将其解压 在此十分感谢该参考链接： 的具体指导操作https://blog.csdn.net/weixin_42038760/article/details/112911555\n方法二：修改host 关于这一步没有进行具体实践，具体操作步骤可以参考链接: 参考链接.\n",
+  "articleBody": "在Python中运行该代码是报错——getaddrinfo failed\n1 2 import nltk download nltk 解决方法：\n方法一：官方查找文件下载 1.去官网下载文件 https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator\n2.下载文件后解压，解压后文件如图所示\n3.在使用nltk中 from nltk.corpus import brown brown.categories()报错后会出现下述的报错信息，关注红框里的路劲\n4.在红框中的路劲中选择任意一个，注意：nltk_data是没有的，需要自行创建这个文件，我选择在E盘下创建这个文件夹。\n5.将官网下载后解压文件中packages下的子文件夹全部复制到这个刚创建的nltk_data文件夹下\n注意 不是将packages文件下复制到创建的nltk_data，而是packages下的所有子文件夹。以corpora为例，路径是D:\\Anaconda\\share\\nltk_data\\corpora 而不是D:\\Anaconda\\share\\nltk_data\\packages\\corpora\n6.由于报错信息提示\n因此在E盘中的nltk_data中找到该文件，并将其解压 在此十分感谢该参考链接： 的具体指导操作：https://blog.csdn.net/weixin_42038760/article/details/112911555\n方法二：修改host 关于这一步没有进行具体实践，具体操作步骤可以参考链接: 参考链接.\n",
   "wordCount" : "557",
   "inLanguage": "en",
-  "datePublished": "2023-03-11T17:33:27+08:00",
-  "dateModified": "2023-03-11T00:18:23+08:00",
+  "datePublished": "2022-03-30T17:33:27+08:00",
+  "dateModified": "2022-03-30T00:18:23+08:00",
   "author":[{
     "@type": "Person",
     "name": "Grace"
@@ -217,7 +217,7 @@
     <h1 class="post-title">
       【download nltk】使用download nltk报错，下载解压语料库
     </h1>
-    <div class="post-meta"><span title='2023-03-11 17:33:27 +0800 HKT'>2023-03-11</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Grace
+    <div class="post-meta"><span title='2022-03-30 17:33:27 +0800 HKT'>2022-03-30</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Grace
 
 </div>
   </header> <div class="toc">
@@ -248,37 +248,45 @@
 </span></span><span style="display:flex;"><span>download nltk
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img loading="lazy" src="https://img-blog.csdnimg.cn/6064ff8539264bc3b97f1145428dc302.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"  />
-
-<strong>解决方法：</strong></p>
+</div><div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/6064ff8539264bc3b97f1145428dc302.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
+<p><strong>解决方法：</strong></p>
 <h1 id="方法一官方查找文件下载">方法一：官方查找文件下载<a hidden class="anchor" aria-hidden="true" href="#方法一官方查找文件下载">#</a></h1>
 <p>1.去官网下载文件
-<a href="https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator">https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator</a>
-<img loading="lazy" src="https://img-blog.csdnimg.cn/748e49c227c248dda6dd363ad56c0378.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"  />
-
-2.下载文件后解压，解压后文件如图所示
-<img loading="lazy" src="https://img-blog.csdnimg.cn/bb93277de0414f2b9e6b79e281c6c131.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"  />
-
-3.在使用nltk中
+<a href="https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator">https://gitcode.net/mirrors/nltk/nltk_data?utm_source=csdn_github_accelerator</a></p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/748e49c227c248dda6dd363ad56c0378.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
+<p>2.下载文件后解压，解压后文件如图所示</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/bb93277de0414f2b9e6b79e281c6c131.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
+<p>3.在使用nltk中
 from nltk.corpus import brown
-brown.categories()报错后会出现下述的报错信息，关注红框里的路劲
-<img loading="lazy" src="https://img-blog.csdnimg.cn/6305e5c22040404f83099126242c317d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"  />
-
-4.在红框中的路劲中选择任意一个，<strong>注意</strong>：nltk_data是没有的，需要自行创建这个文件，我选择在E盘下创建这个文件夹。
-<img loading="lazy" src="https://img-blog.csdnimg.cn/bcaedae288c8478a90c0ad80c3465b62.png" alt="在这里插入图片描述"  />
-
-5.将官网下载后解压文件中packages下的子文件夹全部复制到这个刚创建的nltk_data文件夹下
-<img loading="lazy" src="https://img-blog.csdnimg.cn/cda2acf5ed0e495291a932453136f7d4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_11,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"  />
-
-<strong>注意：</strong> 不是将packages文件下复制到创建的nltk_data，而是packages下的所有子文件夹。以corpora为例，路径是D:\Anaconda\share\nltk_data\corpora
-而不是D:\Anaconda\share\nltk_data\packages\corpora
-6.由于报错信息提示
-<img loading="lazy" src="https://img-blog.csdnimg.cn/baa7f9a58f3d4155907229ecceb5420a.png" alt="在这里插入图片描述"  />
-
+brown.categories()报错后会出现下述的报错信息，关注红框里的路劲</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/6305e5c22040404f83099126242c317d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_15,color_FFFFFF,t_70,g_se,x_16" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
+<p>4.在红框中的路劲中选择任意一个，<strong>注意</strong>：nltk_data是没有的，需要自行创建这个文件，我选择在E盘下创建这个文件夹。</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/bcaedae288c8478a90c0ad80c3465b62.png" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
+<p>5.将官网下载后解压文件中packages下的子文件夹全部复制到这个刚创建的nltk_data文件夹下</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/cda2acf5ed0e495291a932453136f7d4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_11,color_FFFFFF,t_70,g_se,x_16" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
+<p><strong>注意</strong> 不是将packages文件下复制到创建的nltk_data，而是packages下的所有子文件夹。以corpora为例，路径是D:\Anaconda\share\nltk_data\corpora
+而不是D:\Anaconda\share\nltk_data\packages\corpora</p>
+<p>6.由于报错信息提示</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/baa7f9a58f3d4155907229ecceb5420a.png" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
 因此在E盘中的nltk_data中找到该文件，并将其解压
-<img loading="lazy" src="https://img-blog.csdnimg.cn/72aac8ea0ae14c479497479828932d9c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_9,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"  />
-</p>
-<p>在此十分感谢该<strong>参考链接：</strong> 的具体指导操作https://blog.csdn.net/weixin_42038760/article/details/112911555</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/72aac8ea0ae14c479497479828932d9c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2jlnZrmjIHlnZrmjIHlho3lnZrmjIE=,size_9,color_FFFFFF,t_70,g_se,x_16" alt='pic01' referrerpolicy='no-referrer' style ="width:80%;height:80%; margin = auto">
+</div>
+<p>在此十分感谢该<strong>参考链接：</strong> 的具体指导操作：https://blog.csdn.net/weixin_42038760/article/details/112911555</p>
 <h1 id="方法二修改host">方法二：修改host<a hidden class="anchor" aria-hidden="true" href="#方法二修改host">#</a></h1>
 <p>关于这一步没有进行具体实践，具体操作步骤可以参考链接: <a href="https://blog.csdn.net/weixin_44660150/article/details/107144469">参考链接</a>.</p>
 
@@ -290,15 +298,15 @@ brown.categories()报错后会出现下述的报错信息，关注红框里的�
       <li><a href="https://Graceoooffice.github.io/tags/blog/">blog</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://Graceoooffice.github.io/posts/self-study-plan-series/ss0313/">
+  <a class="prev" href="https://Graceoooffice.github.io/posts/mac-operaion/mac02/">
     <span class="title">« Prev</span>
     <br>
-    <span>【自学计划系列03】使用Hugo等配置增添网站功能</span>
+    <span>【Mac-jupyter】在Mac设备中更改jupyter的默认工作路径</span>
   </a>
-  <a class="next" href="https://Graceoooffice.github.io/posts/mac-operaion/mac02/">
+  <a class="next" href="https://Graceoooffice.github.io/posts/sql-learing/sql01/">
     <span class="title">Next »</span>
     <br>
-    <span>【Mac-jupyter】在Mac设备中更改jupyter的默认工作路径</span>
+    <span>SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法</span>
   </a>
 </nav>
 

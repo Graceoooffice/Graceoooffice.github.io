@@ -60,8 +60,8 @@
 <meta property="og:description" content="一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Graceoooffice.github.io/posts/sql-learing/sql01/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-11T17:33:27+08:00" />
-<meta property="article:modified_time" content="2023-03-11T00:18:23+08:00" />
+<meta property="article:published_time" content="2022-02-25T17:33:27+08:00" />
+<meta property="article:modified_time" content="2022-02-25T00:18:23+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法"/>
@@ -98,11 +98,11 @@
   "keywords": [
     ""
   ],
-  "articleBody": "一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null 1.1 iFnull（）的使用 IFNULL(expr1,expr2)的用法：\n假如expr1 不为 NULL，则 IFNULL() 的返回值为 expr1; 否则其返回值为 expr2。IFNULL()的返回值是数字或是字符串，具体情况取决于其所使用的语境。\nmysql\u003e SELECT IFNULL(1,0); -\u003e 1 mysql\u003e SELECT IFNULL(NULL,10); -\u003e 10 mysql\u003e SELECT IFNULL(1/0,10); -\u003e 10 mysql\u003e SELECT IFNULL(1/0,‘yes’);\n-\u003e ‘yes’\nIFNULL(expr1,expr2)的默认结果值为两个表达式中更加“通用”的一个，顺序为STRING、 REAL或INTEGER。假设一个基于表达式的表的情况或MySQL必须在内存储器中储存一个临时表中IFNULL()的返回值： CREATE TABLE tmp SELECT IFNULL(1,’test’) AS test； 在这个例子中，测试列的类型为 CHAR(4)。\n1.2 完整代码 1 2 3 4 5 6 7 8 9 10 11 select ifNull( (select distinct a.salary as SecondHighestSalary from (select id ,salary ,dense_rank() over(order by salary desc) as rn from Employee ) a where a.rn=2) ,null) as SecondHighestSalary 二、返回NUll的对象—找出所有从不订购任何东西的客户 题目描述：某网站包含两个表，Customers 表和 Orders 表。编写一个 SQL 查询，找出所有从不订购任何东西的客户\n1.1 isnull（）的使用 isnull(expr) 的用法： 如expr 为null，那么isnull() 的返回值为 1，否则返回值为 0。 mysql\u003e select isnull(1+1); -\u003e 0 mysql\u003e select isnull(1/0); -\u003e 1 使用= 的null 值对比通常是错误的。\nisnull() 函数同 is null比较操作符具有一些相同的特性。请参见有关is null 的说明\n1.2 完整代码 1 2 3 4 5 6 select name from customers left join orders on customers.id = orders.customerId where isnull(customerId); 使用where not in\n1 2 3 select name from customers where id not in ( select customerId from orders ); 三、参考链接 3.2 NULL（）的使用 NULLIF(expr1,expr2) 的用法：\n如果expr1 = expr2 成立，那么返回值为NULL，否则返回值为 expr1。这和CASE WHEN expr1 = expr2 THEN NULL ELSE expr1 END相同。 mysql\u003e SELECT NULLIF(1,1);\n-\u003e NULL mysql\u003e SELECT NULLIF(1,2); -\u003e 1 如果参数不相等，则 MySQL 两次求得的值为 expr1\nsql中ifnull(),isnull(),nullif()的使用方法 https://blog.csdn.net/qq_39889961/article/details/85872342\n",
+  "articleBody": "一、查询应该返回 null —如果不存在，查询应该返回 null 题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null\n1.1 iFnull（）的使用 IFNULL(expr1,expr2)的用法：\n假如expr1 不为 NULL，则 IFNULL() 的返回值为 expr1; 否则其返回值为 expr2。IFNULL()的返回值是数字或是字符串，具体情况取决于其所使用的语境。\nmysql\u003e SELECT IFNULL(1,0);\n-\u003e 1\nmysql\u003e SELECT IFNULL(NULL,10);\n-\u003e 10\nmysql\u003e SELECT IFNULL(1/0,10);\n-\u003e 10\nmysql\u003e SELECT\nIFNULL(1/0,‘yes’);\n-\u003e ‘yes’\nIFNULL(expr1,expr2)的默认结果值为两个表达式中更加“通用”的一个，顺序为STRING、 REAL或INTEGER。假设一个基于表达式的表的情况或MySQL必须在内存储器中储存一个临时表中IFNULL()的返回值： CREATE TABLE tmp SELECT IFNULL(1,’test’) AS test； 在这个例子中，测试列的类型为 CHAR(4)。\n1.2 完整代码 1 2 3 4 5 6 7 8 9 10 11 select ifNull( (select distinct a.salary as SecondHighestSalary from (select id ,salary ,dense_rank() over(order by salary desc) as rn from Employee ) a where a.rn=2) ,null) as SecondHighestSalary 二、返回NUll的对象—找出所有从不订购任何东西的客户 题目描述：某网站包含两个表，Customers 表和 Orders 表。编写一个 SQL 查询，找出所有从不订购任何东西的客户\n1.1 isnull（）的使用 isnull(expr) 的用法： 如expr 为null，那么isnull() 的返回值为 1，否则返回值为 0。\nmysql\u003e select isnull(1+1);\n-\u003e 0\nmysql\u003e select isnull(1/0);\n-\u003e 1\n使用= 的null 值对比通常是错误的。\nisnull() 函数同 is null比较操作符具有一些相同的特性。请参见有关is null 的说明\n1.2 完整代码 1 2 3 4 5 6 select name from customers left join orders on customers.id = orders.customerId where isnull(customerId); 使用where not in\n1 2 3 select name from customers where id not in ( select customerId from orders ); 三、参考链接 3.2 NULL（）的使用 NULLIF(expr1,expr2) 的用法：\n如果expr1 = expr2 成立，那么返回值为NULL，否则返回值为 expr1。这和CASE WHEN expr1 = expr2\nTHEN NULL ELSE expr1 END相同。\nmysql\u003e SELECT\nNULLIF(1,1);\n-\u003e NULL\nmysql\u003e SELECT NULLIF(1,2);\n-\u003e 1\n如果参数不相等，则 MySQL 两次求得的值为 expr1\nsql中ifnull(),isnull(),nullif()的使用方法 https://blog.csdn.net/qq_39889961/article/details/85872342\n",
   "wordCount" : "762",
   "inLanguage": "en",
-  "datePublished": "2023-03-11T17:33:27+08:00",
-  "dateModified": "2023-03-11T00:18:23+08:00",
+  "datePublished": "2022-02-25T17:33:27+08:00",
+  "dateModified": "2022-02-25T00:18:23+08:00",
   "author":[{
     "@type": "Person",
     "name": "Grace"
@@ -211,7 +211,7 @@
     <h1 class="post-title">
       SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法
     </h1>
-    <div class="post-meta"><span title='2023-03-11 17:33:27 +0800 HKT'>2023-03-11</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Grace
+    <div class="post-meta"><span title='2022-02-25 17:33:27 +0800 HKT'>2022-02-25</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Grace
 
 </div>
   </header> <div class="toc">
@@ -251,23 +251,25 @@
 </div>
 
   <div class="post-content"><h2 id="一查询应该返回-null-如果不存在查询应该返回-null">一、查询应该返回 null —如果不存在，查询应该返回 null<a hidden class="anchor" aria-hidden="true" href="#一查询应该返回-null-如果不存在查询应该返回-null">#</a></h2>
-<p>题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null
-<img loading="lazy" src="https://img-blog.csdnimg.cn/4b9116d6ce6c46c49fb418ba615546bc.png" alt="在这里插入图片描述"  />
-
-<img loading="lazy" src="https://img-blog.csdnimg.cn/8e8df9e267e34abe9fdc44006fa1cb23.png" alt="在这里插入图片描述"  />
-</p>
+<p>题目描述：获取并返回 Employee 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 null</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/4b9116d6ce6c46c49fb418ba615546bc.png" alt='pic01' referrerpolicy='no-referrer' style ="width:30%;height：30%; margin = auto">
+</div>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/8e8df9e267e34abe9fdc44006fa1cb23.png" alt='pic01' referrerpolicy='no-referrer' style ="width:30%;height：30%; margin = auto">
+</div>
 <h3 id="11-ifnull的使用">1.1 iFnull（）的使用<a hidden class="anchor" aria-hidden="true" href="#11-ifnull的使用">#</a></h3>
 <p><strong>IFNULL(expr1,expr2)的用法：</strong></p>
 <p>假如expr1   不为   NULL，则   IFNULL()   的返回值为   expr1;
 否则其返回值为   expr2。IFNULL()的返回值是数字或是字符串，具体情况取决于其所使用的语境。</p>
-<p>mysql&gt;   SELECT   IFNULL(1,0);
--&gt;   1
-mysql&gt;   SELECT   IFNULL(NULL,10);
--&gt;   10
-mysql&gt;   SELECT   IFNULL(1/0,10);
--&gt;   10
-mysql&gt;   SELECT
-IFNULL(1/0,&lsquo;yes&rsquo;);</p>
+<p>mysql&gt;   SELECT   IFNULL(1,0);</p>
+<p>-&gt;   1</p>
+<p>mysql&gt;   SELECT   IFNULL(NULL,10);</p>
+<p>-&gt;   10</p>
+<p>mysql&gt;   SELECT   IFNULL(1/0,10);</p>
+<p>-&gt;   10</p>
+<p>mysql&gt;   SELECT</p>
+<p>IFNULL(1/0,&lsquo;yes&rsquo;);</p>
 <p>-&gt;   &lsquo;yes&rsquo;</p>
 <p>IFNULL(expr1,expr2)的默认结果值为两个表达式中更加“通用”的一个，顺序为STRING、   REAL或INTEGER。假设一个基于表达式的表的情况或MySQL必须在内存储器中储存一个临时表中IFNULL()的返回值：
 CREATE   TABLE   tmp   SELECT   IFNULL(1,&rsquo;test&rsquo;)   AS   test；
@@ -303,16 +305,17 @@ CREATE   TABLE   tmp   SELECT   IFNULL(1,&rsquo;test&rsquo;)   AS   test；
 </div>
 </div><h2 id="二返回null的对象找出所有从不订购任何东西的客户">二、返回NUll的对象—找出所有从不订购任何东西的客户<a hidden class="anchor" aria-hidden="true" href="#二返回null的对象找出所有从不订购任何东西的客户">#</a></h2>
 <p>题目描述：某网站包含两个表，Customers 表和 Orders 表。编写一个 SQL 查询，找出所有从不订购任何东西的客户</p>
-<p><img loading="lazy" src="https://img-blog.csdnimg.cn/35d4864021e64d80874ea5b92ad9a709.png" alt="在这里插入图片描述"  />
-</p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="https://img-blog.csdnimg.cn/35d4864021e64d80874ea5b92ad9a709.png" alt='pic01' referrerpolicy='no-referrer' style ="width:30%;height：30%; margin = auto">
+</div>
 <h3 id="11-isnull的使用">1.1 isnull（）的使用<a hidden class="anchor" aria-hidden="true" href="#11-isnull的使用">#</a></h3>
 <p>isnull(expr) 的用法：
-如expr 为null，那么isnull() 的返回值为 1，否则返回值为 0。
-mysql&gt; select isnull(1+1);
--&gt; 0
-mysql&gt; select isnull(1/0);
--&gt; 1
-使用= 的null 值对比通常是错误的。</p>
+如expr 为null，那么isnull() 的返回值为 1，否则返回值为 0。</p>
+<p>mysql&gt; select isnull(1+1);</p>
+<p>-&gt; 0</p>
+<p>mysql&gt; select isnull(1/0);</p>
+<p>-&gt; 1</p>
+<p>使用= 的null 值对比通常是错误的。</p>
 <p>isnull() 函数同 is null比较操作符具有一些相同的特性。请参见有关is null 的说明</p>
 <h3 id="12-完整代码-1">1.2 完整代码<a hidden class="anchor" aria-hidden="true" href="#12-完整代码-1">#</a></h3>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -350,14 +353,14 @@ mysql&gt; select isnull(1/0);
 <h3 id="32-null的使用">3.2 NULL（）的使用<a hidden class="anchor" aria-hidden="true" href="#32-null的使用">#</a></h3>
 <p>NULLIF(expr1,expr2)  的用法：<br>
 如果expr1
-=   expr2     成立，那么返回值为NULL，否则返回值为   expr1。这和CASE   WHEN   expr1   =   expr2
-THEN   NULL   ELSE   expr1   END相同。
-mysql&gt;   SELECT
-NULLIF(1,1);</p>
-<p>-&gt;   NULL
-mysql&gt;   SELECT   NULLIF(1,2);
--&gt;   1
-如果参数不相等，则   MySQL   两次求得的值为     expr1</p>
+=   expr2     成立，那么返回值为NULL，否则返回值为   expr1。这和CASE   WHEN   expr1   =   expr2</p>
+<p>THEN   NULL   ELSE   expr1   END相同。</p>
+<p>mysql&gt;   SELECT</p>
+<p>NULLIF(1,1);</p>
+<p>-&gt;   NULL</p>
+<p>mysql&gt;   SELECT   NULLIF(1,2);</p>
+<p>-&gt;   1</p>
+<p>如果参数不相等，则   MySQL   两次求得的值为     expr1</p>
 <p><strong>sql中ifnull(),isnull(),nullif()的使用方法</strong>
 <em><a href="https://blog.csdn.net/qq_39889961/article/details/8587234">https://blog.csdn.net/qq_39889961/article/details/8587234</a></em>2</p>
 
@@ -369,10 +372,10 @@ mysql&gt;   SELECT   NULLIF(1,2);
       <li><a href="https://Graceoooffice.github.io/tags/blog/">blog</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://Graceoooffice.github.io/posts/self-study-plan-series/ss01/">
+  <a class="prev" href="https://Graceoooffice.github.io/posts/error-fitting/error01/">
     <span class="title">« Prev</span>
     <br>
-    <span>【自学计划系列02】VScode操作问题汇总_实际案例结合python和Jupyter报错问题Mac限定版</span>
+    <span>【download nltk】使用download nltk报错，下载解压语料库</span>
   </a>
   <a class="next" href="https://Graceoooffice.github.io/posts/sql-learing/sql02/">
     <span class="title">Next »</span>
