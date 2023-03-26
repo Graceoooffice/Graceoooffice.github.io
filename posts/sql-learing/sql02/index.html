@@ -10,7 +10,7 @@
 <meta name="description" content="题目描述：查找收入比经理高的员工。 下图表头的含义解释-雇员的ID、姓名、工资和经理的ID。 一、解题思路一 一、将是经理和不是经理的信息分开为两">
 <meta name="author" content="Grace">
 <link rel="canonical" href="https://Graceoooffice.github.io/posts/sql-learing/sql02/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f930b34288a607d30fe6878524e8b5b4a132bf4ebfda6ca5e4795120c773d498.css" integrity="sha256-&#43;TCzQoimB9MP5oeFJOi1tKEyv06/2myl5HlRIMdz1Jg=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7029fb21c8567ded18adc42f61eee9c15c55b59e721d06f5fa7acfb256915e79.css" integrity="sha256-cCn7IchWfe0YrcQvYe7pwVxVtZ5yHQb1&#43;nrPslaRXnk=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://Graceoooffice.github.io/img/Q.jpg">
@@ -214,33 +214,95 @@
     <div class="post-meta"><span title='2022-02-25 17:33:27 +0800 HKT'>2022-02-25</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Grace
 
 </div>
-  </header> <div class="toc">
-    <details  open>
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
 
-        <div class="inner"><ul>
-                <li>
-                    <a href="#%e9%a2%98%e7%9b%ae%e6%8f%8f%e8%bf%b0%e6%9f%a5%e6%89%be%e6%94%b6%e5%85%a5%e6%af%94%e7%bb%8f%e7%90%86%e9%ab%98%e7%9a%84%e5%91%98%e5%b7%a5" aria-label="题目描述：查找收入比经理高的员工。">题目描述：查找收入比经理高的员工。</a></li>
-                <li>
-                    <a href="#%e4%b8%80%e8%a7%a3%e9%a2%98%e6%80%9d%e8%b7%af%e4%b8%80" aria-label="一、解题思路一">一、解题思路一</a><ul>
-                        
-                <li>
-                    <a href="#11-%e5%85%b3%e4%ba%8enull%e7%9a%84%e4%bd%bf%e7%94%a8%e9%97%ae%e9%a2%98" aria-label="1.1 关于NULL的使用问题">1.1 关于NULL的使用问题</a></li></ul>
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e9%a2%98%e7%9b%ae%e6%8f%8f%e8%bf%b0%e6%9f%a5%e6%89%be%e6%94%b6%e5%85%a5%e6%af%94%e7%bb%8f%e7%90%86%e9%ab%98%e7%9a%84%e5%91%98%e5%b7%a5" aria-label="题目描述：查找收入比经理高的员工。">题目描述：查找收入比经理高的员工。</a></li>
+                    <li>
+                        <a href="#%e4%b8%80%e8%a7%a3%e9%a2%98%e6%80%9d%e8%b7%af%e4%b8%80" aria-label="一、解题思路一">一、解题思路一</a><ul>
+                            
+                    <li>
+                        <a href="#11-%e5%85%b3%e4%ba%8enull%e7%9a%84%e4%bd%bf%e7%94%a8%e9%97%ae%e9%a2%98" aria-label="1.1 关于NULL的使用问题">1.1 关于NULL的使用问题</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e4%ba%8c%e8%a7%a3%e9%a2%98%e6%80%9d%e8%b7%af%e4%ba%8c" aria-label="二、解题思路二">二、解题思路二</a><ul>
+                            
+                    <li>
+                        <a href="#21%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81%e5%a6%82%e4%b8%8b" aria-label="2.1完整代码如下">2.1完整代码如下</a>
+                    </li>
+                </ul>
                 </li>
-                <li>
-                    <a href="#%e4%ba%8c%e8%a7%a3%e9%a2%98%e6%80%9d%e8%b7%af%e4%ba%8c" aria-label="二、解题思路二">二、解题思路二</a><ul>
-                        
-                <li>
-                    <a href="#21%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81%e5%a6%82%e4%b8%8b" aria-label="2.1完整代码如下">2.1完整代码如下</a>
-                </li>
-            </ul>
-            </li>
-            </ul>
-        </div>
-    </details>
-</div>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
 
   <div class="post-content"><h2 id="题目描述查找收入比经理高的员工">题目描述：查找收入比经理高的员工。<a hidden class="anchor" aria-hidden="true" href="#题目描述查找收入比经理高的员工">#</a></h2>
 <p>下图表头的含义解释-雇员的ID、姓名、工资和经理的ID。</p>
@@ -325,12 +387,24 @@
     <br>
     <span>SQL中案例实例01—ifnull(),isnull(),nullif()的使用方法</span>
   </a>
+  <a class="next" href="https://Graceoooffice.github.io/posts/ai-painting/01-step-to-train-your-model/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
 </nav>
 
   </footer>
 </article>
     </main>
-    
+    <i class="powerby">
+    <span id="busuanzi_container_site_pv">
+        Views&nbsp;-&nbsp;<span id="busuanzi_value_site_pv"></span>
+    </span>&nbsp;
+    <span id="busuanzi_container_site_uv">
+        Visitors&nbsp;-&nbsp;<span id="busuanzi_value_site_uv"></span>
+      </span>
+    </i>
 <footer class="footer">
     <span>&copy; 2023 <a href="https://Graceoooffice.github.io">Grace&#39;s Office</a></span>
     <span>
